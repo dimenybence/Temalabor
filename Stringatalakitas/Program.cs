@@ -1,15 +1,15 @@
 ﻿namespace Stringatalakitas
 {
-    internal class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             string input = Console.ReadLine();
             Console.WriteLine(FirstCharacterRemove(input));
             Console.WriteLine(LastCharacterRemove(input));
         }
 
-        static string FirstCharacterRemove(string text)
+        public static string FirstCharacterRemove(string text)
         {
             string[] words = text.Split(" ");
             for(int i = 0; i < words.Length; i++)
@@ -22,7 +22,7 @@
             return string.Join(" ", words);
         }
 
-        static String LastCharacterRemove(string text)
+        public static string LastCharacterRemove(string text)
         {
             string[] words = text.Split(" ");
             for (int i = 0;i < words.Length;i++)
