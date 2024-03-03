@@ -5,24 +5,23 @@ name: .NET
 
 on:
   push:
-    branches:
-      - main
+    branches: [ "main" ]
+  pull_request: 
+    branches: [ "main" ]
 
 jobs:
-  build-and-test:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
+      - uses: actions/checkout@v3
       - name: Setup .NET
-        uses: actions/setup-dotnet@v1
+        uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: '6.0.x'
-
+          dotnet-version: '6.0.x'    
+      - name: Restore dependencies
+        run: dotnet restore Stringatalakitas/Stringatalakitas.csproj
       - name: Build
-        run: dotnet build --configuration Release
-
+        run: dotnet build Stringatalakitas/Stringatalakitas.csproj
       - name: Test
-        run: dotnet test --configuration Release --logger trx --results-directory test-results
+        run: dotnet test Tesztek/Tesztek.csproj
