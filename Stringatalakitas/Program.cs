@@ -4,7 +4,8 @@
     {
         public static void Main(string[] args)
         {
-            string input = Console.ReadLine();
+            string? s = Console.ReadLine();
+            string input = s;
             Console.WriteLine(FirstCharacterRemove(input));
             Console.WriteLine(LastCharacterRemove(input));
         }
