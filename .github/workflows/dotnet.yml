@@ -5,9 +5,9 @@ name: .NET
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "master" ]
   pull_request: 
-    branches: [ "main" ]
+    branches: [ "master" ]
 
 jobs:
   build:
@@ -25,3 +25,12 @@ jobs:
         run: dotnet build Stringatalakitas/Stringatalakitas.csproj
       - name: Test
         run: dotnet test Tesztek/Tesztek.csproj
+      - name: Create issue on Test Failure
+        if: ${{ failure() }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: JasonEtco/create-an-issue@v2.9.2
+        with: 
+          title: "Teszt hiba"
+          body: |
+            A tesztek futtatása során hiba lépett fel.
