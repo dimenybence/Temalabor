@@ -25,6 +25,7 @@ jobs:
         run: dotnet build Stringatalakitas/Stringatalakitas.csproj
       - name: Test
         run: dotnet test Tesztek/Tesztek.csproj
+      - name: Create issue on Test Failure
         if: ${{ failure() }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
