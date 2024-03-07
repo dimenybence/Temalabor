@@ -27,10 +27,6 @@ jobs:
         run: dotnet test Tesztek/Tesztek.csproj
       - name: Create issue on Test Failure
         if: ${{ failure() }}
+        uses: JasonEtco/create-an-issue@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        uses: JasonEtco/create-an-issue@v2.9.2
-        with: 
-          title: "Teszt hiba"
-          body: |
-            A tesztek futtatása során hiba lépett fel.
