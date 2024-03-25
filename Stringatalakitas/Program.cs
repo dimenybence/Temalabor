@@ -5,6 +5,11 @@
         public static void Main(string[] args)
         {
             string? s = Console.ReadLine();
+            if (s == null)
+            {
+                Console.WriteLine("Nem adott meg szöveget!");
+                return;
+            }
             string input = s;
             Console.WriteLine(FirstCharacterRemove(input));
             Console.WriteLine(LastCharacterRemove(input));
