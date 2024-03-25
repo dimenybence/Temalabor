@@ -29,3 +29,4 @@ jobs:
        destination_branch: 'master'
        pr_title: 'Pull Request from dev branch'
        pr_body: 'Tests succsessful'
+       pr_reviewer: "dimenybence"
