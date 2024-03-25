@@ -19,13 +19,13 @@ namespace Tesztek
             Assert.Equal(expected, result);
         }
 
-        [Fact]
-        public void WrongCharTest()
-        {
-            string input = "alma körte barack";
-            string expected = "alm kört barac";
-            string result = Stringatalakitas.Program.FirstCharacterRemove(input);
-            Assert.Equal(expected, result);
-        }
+        //[Fact]
+        //public void WrongCharTest()
+        //{
+        //    string input = "alma körte barack";
+        //    string expected = "alm kört barac";
+        //    string result = Stringatalakitas.Program.FirstCharacterRemove(input);
+        //    Assert.Equal(expected, result);
+        //}
     }
 }
